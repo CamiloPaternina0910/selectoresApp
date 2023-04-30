@@ -13,16 +13,17 @@
 
     <div class="col-12" *ngIf="paises.length > 0">
       <label for="" class="form-label">Paises</label>
-      <select class="form-control">
+      <select class="form-control" formControlName="pais">
         <option value="">-- Selecione el continente --</option>
-        <option [value]="pais" *ngFor="let pais of paises">{{ pais.name?.common }}</option>
+        <option [value]="pais.cca3" *ngFor="let pais of paises">{{ pais.name?.common }}</option>
       </select>
     </div>
 
-    <div class="col-12">
-      <label for="" class="form-label">Continente</label>
-      <select class="form-control">
-        -- Selecione el continente --
+    <div class="col-12" *ngIf="fronteras.length > 0">
+      <label for="" class="form-label">Fronteras</label>
+      <select class="form-control" formControlName="fronteras">
+        <option value="">-- Selecione la frontera --</option>
+        <option [value]="frontera" *ngFor="let frontera of fronteras">{{ frontera.name.common}}</option>
       </select>
     </div>
 
